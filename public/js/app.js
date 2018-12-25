@@ -64405,6 +64405,8 @@ function (_Component) {
         // redirect to the homepage
         history.push('/');
       }).catch(function (error) {
+        error = resonpose.data.error;
+
         _this2.setState({
           errors: error.response.data.errors
         });
@@ -64444,9 +64446,9 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "name"
+        htmlFor: "title"
       }, "Case name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        id: "name",
+        id: "title",
         type: "text",
         className: "form-control ".concat(this.hasErrorFor('title') ? 'is-invalid' : ''),
         name: "title",
@@ -64455,22 +64457,23 @@ function (_Component) {
       }), this.renderErrorFor('title')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "description"
+        htmlFor: "car_description"
       }, "Case description"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
         id: "description",
         className: "form-control ".concat(this.hasErrorFor('case_description') ? 'is-invalid' : ''),
-        name: "description",
+        name: "case_description",
+        type: "text",
         rows: "10",
         value: this.state.case_description,
         onChange: this.handleFieldChange
       }), this.renderErrorFor('case_description')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "description"
+        htmlFor: "case_solution"
       }, "Case Solution"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-        id: "description",
+        id: "case_solution",
         className: "form-control ".concat(this.hasErrorFor('case_solution') ? 'is-invalid' : ''),
-        name: "description",
+        name: "case_solution",
         rows: "10",
         value: this.state.case_solution,
         onChange: this.handleFieldChange
@@ -64488,8 +64491,8 @@ function (_Component) {
       }), this.renderErrorFor('doctor_name')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        htmlFor: "name"
-      }, "Project name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        htmlFor: "pharmacy_name"
+      }, "Pharmacy name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         id: "name",
         type: "text",
         className: "form-control ".concat(this.hasErrorFor('pharmacy_name') ? 'is-invalid' : ''),

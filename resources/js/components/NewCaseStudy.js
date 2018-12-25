@@ -43,6 +43,7 @@ class NewCaseStudy extends Component {
             history.push('/')
           })
           .catch(error => {
+            error= resonpose.data.error
             this.setState({
               errors: error.response.data.errors
             })
@@ -73,9 +74,9 @@ class NewCaseStudy extends Component {
                   <div className='card-body'>
                     <form onSubmit={this.handleCreateNewCaseStudy}>
                       <div className='form-group'>
-                        <label htmlFor='name'>Case name</label>
+                        <label htmlFor='title'>Case name</label>
                         <input
-                          id='name'
+                          id='title'
                           type='text'
                           className={`form-control ${this.hasErrorFor('title') ? 'is-invalid' : ''}`}
                           name='title'
@@ -85,11 +86,12 @@ class NewCaseStudy extends Component {
                         {this.renderErrorFor('title')}
                       </div>
                       <div className='form-group'>
-                        <label htmlFor='description'>Case description</label>
+                        <label htmlFor='car_description'>Case description</label>
                         <textarea
                           id='description'
                           className={`form-control ${this.hasErrorFor('case_description') ? 'is-invalid' : ''}`}
-                          name='description'
+                          name='case_description'
+                          type='text'
                           rows='10'
                           value={this.state.case_description}
                           onChange={this.handleFieldChange}
@@ -97,11 +99,11 @@ class NewCaseStudy extends Component {
                         {this.renderErrorFor('case_description')}
                       </div>
                       <div className='form-group'>
-                        <label htmlFor='description'>Case Solution</label>
+                        <label htmlFor='case_solution'>Case Solution</label>
                         <textarea
-                          id='description'
+                          id='case_solution'
                           className={`form-control ${this.hasErrorFor('case_solution') ? 'is-invalid' : ''}`}
-                          name='description'
+                          name='case_solution'
                           rows='10'
                           value={this.state.case_solution}
                           onChange={this.handleFieldChange}
@@ -121,7 +123,7 @@ class NewCaseStudy extends Component {
                         {this.renderErrorFor('doctor_name')}
                       </div>
                       <div className='form-group'>
-                        <label htmlFor='name'>Project name</label>
+                        <label htmlFor='pharmacy_name'>Pharmacy name</label>
                         <input
                           id='name'
                           type='text'
@@ -143,4 +145,4 @@ class NewCaseStudy extends Component {
       }
     }
 
-    export default NewCaseStudy
+export default NewCaseStudy
